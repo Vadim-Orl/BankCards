@@ -1,0 +1,15 @@
+.card__nav {
+    display: flex;
+    // justify-content: space-around;
+
+    button svg {
+        width: 8vw;
+        height: 8vw;
+        margin-right: var(--margin3);
+    }
+}
+
+.card__nav--view, .card__nav--del{
+    background-color: inherit;
+    border: none;
+}

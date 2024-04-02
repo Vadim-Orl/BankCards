@@ -1,11 +1,12 @@
 /* eslint-disable react/react-in-jsx-scope */
+import { CardItem } from '../entities/CardItem';
+
 import './App.scss';
-import BlogIcon from './assets/react.svg?react';
 
 export default function App() {
     return (
         <div className="app">
-            <BlogIcon />
+            <CardItem />
         </div>
     );
 }
