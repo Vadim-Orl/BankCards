@@ -15,7 +15,7 @@ export function Error({ error }: ErrorProps) {
         case ErrorCode.invalidRequest:
             message = error.data!.message;
             break;
-        case ErrorCode.serverOut:
+        case 500:
             message = 'Все упало';
             break;
 
