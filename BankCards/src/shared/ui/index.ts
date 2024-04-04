@@ -1,3 +1,4 @@
 export { Button } from './Button/Button';
 export { Error } from './Error/Error';
-export { Loading } from './Loading/Loading';
+export { LoadingCompany } from './LoadingCompany/LoadingCompany';
+export { Loader } from './Loader/Loader';

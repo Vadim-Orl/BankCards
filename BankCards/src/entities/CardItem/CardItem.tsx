@@ -1,12 +1,15 @@
 import CardNav from '../../features/CardNav/ui/CardNav';
 import './CardItem.scss';
-import { companyMok } from './model/mok';
-import { ICardItemProps } from './ts';
-// import LogoIcon from '../../../img/logo.svg?react';
+import type { CardItem } from './model/types';
 
-const CardItem = ({ ...props }: ICardItemProps): JSX.Element => {
+interface ICardItemProps {
+    card: CardItem;
+}
+
+const CardItem = ({ card }: ICardItemProps) => {
     const { mobileAppDashboard: cardDesign, customerMarkParameters: cardInfo } =
-        companyMok;
+        card;
+
     const { accentColor, mainColor, backgroundColor } = cardDesign;
 
     const highlightTextColor = {
@@ -18,8 +21,9 @@ const CardItem = ({ ...props }: ICardItemProps): JSX.Element => {
     const textColor = {
         color: cardDesign.textColor,
     };
+
     return (
-        <div className="card__item" style={cardBackground}>
+        <article className="card__item" style={cardBackground}>
             <div className="card__title">
                 <p style={highlightTextColor}>{cardDesign.companyName}</p>
                 <img src={cardDesign.logo}></img>
@@ -51,8 +55,9 @@ const CardItem = ({ ...props }: ICardItemProps): JSX.Element => {
                 accentColor={accentColor}
                 mainColor={mainColor}
                 backgroundColor={backgroundColor}
+                companyId={card.company.companyId}
             />
-        </div>
+        </article>
     );
 };
 

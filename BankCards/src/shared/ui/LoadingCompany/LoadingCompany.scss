@@ -1,0 +1,14 @@
+.loading {
+    // display: flex;
+    
+    justify-content: center;
+    background: var(--lightGray);
+    // padding-bottom: var(--margin2);
+
+    p {
+        font-size: var(--text2);
+        text-align: center;
+        color: var(--black);
+        margin-top: var(--margin2)
+    }
+}

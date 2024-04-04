@@ -1,12 +1,14 @@
-/* eslint-disable react/react-in-jsx-scope */
-import { CardItem } from '../entities/CardItem';
-
+import { Suspense } from 'react';
+import CardList from '../widgets/CardList/ui/CardList';
 import './App.scss';
+import { Loader } from '../shared/ui';
 
 export default function App() {
     return (
         <div className="app">
-            <CardItem />
+            <Suspense fallback={<Loader />}>
+                <CardList />
+            </Suspense>
         </div>
     );
 }

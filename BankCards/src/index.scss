@@ -36,13 +36,28 @@ body {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--darkGray);
+}
+#root {
+  transition:all 0.2s ease-in-out;
 }
 
-// body[data-theme='dark'] {
-//   background-color: var(--gray-500);
-// }
+.blur {
+    filter:blur(10px);
+    transition:all 0.2s ease-in-out;
+    overflow:hidden;
 
-// a {
-//   font-family: 'Space Mono', monospace;
-// }
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      content: '';
+      top: 0;
+      left: 0;
+      background:var(--darkGray);
+      opacity: 0.8;
+    }
+}
+
+.hidden {
+  opacity: 0;
+}
