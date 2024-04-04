@@ -20,6 +20,7 @@ export function Error({ error }: ErrorProps) {
             break;
 
         default:
+            message = 'Что-то пошло не так';
             break;
     }
 
