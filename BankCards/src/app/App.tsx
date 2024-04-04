@@ -1,7 +1,7 @@
-import { lazy, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.scss';
 import { WelcomLogo } from '../shared';
-const CardList = lazy(() => import('../widgets/CardList/ui/CardList'));
+import CardList from '../widgets/CardList/ui/CardList';
 
 export default function App() {
     const [loading, setLoading] = useState(false);
