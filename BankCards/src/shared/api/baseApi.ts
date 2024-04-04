@@ -4,7 +4,7 @@ import { RootState } from '../../app/AppStore';
 export const baseApi = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://devapp.bonusmoney.pro/mobileapp/getAllCompanies',
+        baseUrl: 'https://devapp.bonusmoney.pro/mobileapp/getAllCompanies',
         prepareHeaders: (headers, { getState }) => {
             const token = (getState() as RootState).data.token;
             if (token) {

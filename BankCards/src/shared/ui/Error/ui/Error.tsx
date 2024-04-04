@@ -7,6 +7,7 @@ interface ErrorProps {
 
 export function Error({ error }: ErrorProps) {
     let message = '';
+    console.log(error)
 
     switch (error.status) {
         case ErrorCode.notAuth:
@@ -20,7 +21,7 @@ export function Error({ error }: ErrorProps) {
             break;
 
         default:
-            message = 'Что-то пошло не так';
+            message = error.error;
             break;
     }
 
