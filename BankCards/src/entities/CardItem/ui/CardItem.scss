@@ -10,6 +10,7 @@
     align-items: center;
     margin-bottom: var(--margin1);
     font-size:  var(--text0);
+    font-family: SegoeUIBold;
     img {
         width: var(--logoSize);
         height: var(--logoSize);
@@ -27,6 +28,8 @@
 
 .card__desc--ball {
     font-size: var(--text0);
+    font-family: SegoeUIBold;
+
 }
 
 .card__desc {
