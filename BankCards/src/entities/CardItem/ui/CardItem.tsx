@@ -1,6 +1,6 @@
-import CardNav from '../../features/CardNav/ui/CardNav';
+import CardNav from '../../../features/CardNav/ui/CardNav';
 import './CardItem.scss';
-import type { CardItem } from './model/types';
+import type { CardItem } from '../model/types';
 
 interface ICardItemProps {
     card: CardItem;

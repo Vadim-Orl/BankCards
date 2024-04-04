@@ -1,8 +1,8 @@
-import { Button } from '../../../shared/ui';
+import { Button } from '../../../shared';
 import './CardNav.scss';
 import EyeIcon from '../../../../public/assets/img/eye_white.svg?react';
 import TrashIcon from '../../../../public/assets/img/trash_white.svg?react';
-import { Modal } from '../../../shared/ui/Modal/Modal';
+import { Modal } from '../../../shared/';
 import { useToggle } from '..';
 
 interface CardNavProps {

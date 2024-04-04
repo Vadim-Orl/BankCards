@@ -7,10 +7,6 @@
     height:  var(--sizePreloader);
     border-radius: 50%;
     background: var(--black);
-    // background: -moz-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-    // background: -webkit-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-    // background: -o-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
-    // background: -ms-linear-gradient(left, #65abf8 10%, rgba(101,171,248, 0) 42%);
     background: linear-gradient(to right, var(--black) 10%, var(--black) 42%);
     position: relative;
     -webkit-animation: load3 1.4s infinite linear;

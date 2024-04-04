@@ -1,6 +1,6 @@
 import { lazy, useEffect, useState } from 'react';
 import './App.scss';
-import { LoadingWelcom } from '../shared/ui/LoadingWelcom/LoadingWelcom';
+import { WelcomLogo } from '../shared';
 const CardList = lazy(() => import('../widgets/CardList/ui/CardList'));
 
 export default function App() {
@@ -13,7 +13,5 @@ export default function App() {
         }, 3000);
     }, []);
 
-    return (
-        <div className="app">{loading ? <LoadingWelcom /> : <CardList />}</div>
-    );
+    return <div className="app">{loading ? <WelcomLogo /> : <CardList />}</div>;
 }

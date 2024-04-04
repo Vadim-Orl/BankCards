@@ -1,13 +1,16 @@
 import ReactDOM from 'react-dom';
 import './Modal.scss';
-import { Button } from '..';
-import { useBlur } from './model/hook';
+import { Button } from '../../..';
+import { useBlur } from '../model/hook';
 import { useEffect } from 'react';
-import { useAppDispatch, useAppSelector } from '../../../app/hooks@deprecated';
-import { closeModal, openModal } from './api/ModalSlice';
+import {
+    useAppDispatch,
+    useAppSelector,
+} from '../../../../app/hooks@deprecated';
+import { closeModal, openModal } from '../api/ModalSlice';
 
 interface ModalProps {
-    children: string | JSX.Element;
+    children?: string | JSX.Element;
     message?: string;
     cb?: () => void;
 }
@@ -15,8 +18,6 @@ interface ModalProps {
 const modal = document.getElementById('modal') as HTMLElement;
 
 export function Modal({ message, cb, children }: ModalProps) {
-    console.log('modal');
-    console.log(cb);
     const dispatch = useAppDispatch();
     const isModalOpenStore = useAppSelector((store) => store.modal.isModalOpen);
 

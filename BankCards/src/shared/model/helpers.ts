@@ -2,7 +2,7 @@ export function makeFirstLetterToUpper(s: string) {
     return s[0].toLocaleUpperCase() + s.slice(1);
 }
 
-export const debounce = <F extends (...args: any[]) => any>(
+export const debounce = <F extends (...args: unknown[]) => unknown>(
     func: F,
     waitFor = 200
 ) => {

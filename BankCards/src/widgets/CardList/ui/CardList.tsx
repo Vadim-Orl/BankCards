@@ -1,14 +1,12 @@
-// import { useEffect } from 'react';
-import { CardItem } from '../../../entities/CardItem';
-// import { companyMok } from '../../../entities/CardItem/model/mok';
-import { Error, LoadingCompany } from '../../../shared/ui';
+import { Error, LoadingCompany } from '../../../shared';
 import './CardList.scss';
 import { widgetsCardListApi } from '../api/widgetsCardListApi';
 import { useAppDispatch, useAppSelector } from '../../../app/hooks@deprecated';
-import { debounce } from '../../../shared/model/helpers';
+import { debounce } from '../../../shared/';
 import { incrementOffset } from '..';
 import { useEffect } from 'react';
-import { ErrorType } from '../../../shared/ui/Error/model/type';
+import { ErrorType } from '../../../shared/ui/Error';
+import CardItem from '../../../entities/CardItem/ui/CardItem';
 
 const CardList = (): JSX.Element => {
     const dispatch = useAppDispatch();

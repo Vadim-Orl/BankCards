@@ -4,7 +4,7 @@ import './Button.scss';
 type ButtonProps = {
     children?: string | ReactNode;
     id?: string;
-    onClick?: boolean | (() => void);
+    onClick?: () => void;
     className?: string;
     style?: {
         background?: string;

@@ -1,2 +1,2 @@
-export { default as CardItem } from './CardItem';
-export type * from './ts';
+export * from './ui/CardItem';
+export type * from './model/types';
