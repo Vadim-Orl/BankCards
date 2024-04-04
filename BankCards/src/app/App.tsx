@@ -1,14 +1,19 @@
-import { Suspense } from 'react';
-import CardList from '../widgets/CardList/ui/CardList';
+import { lazy, useEffect, useState } from 'react';
 import './App.scss';
-import { Loader } from '../shared/ui';
+import { LoadingWelcom } from '../shared/ui/LoadingWelcom/LoadingWelcom';
+const CardList = lazy(() => import('../widgets/CardList/ui/CardList'));
 
 export default function App() {
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 3000);
+    }, []);
+
     return (
-        <div className="app">
-            <Suspense fallback={<Loader />}>
-                <CardList />
-            </Suspense>
-        </div>
+        <div className="app">{loading ? <LoadingWelcom /> : <CardList />}</div>
     );
 }
