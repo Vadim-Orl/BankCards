@@ -1,4 +1,4 @@
-import './WelcomLogo.scss';
+import './WelcomeLogo.scss';
 
 export function WelcomeLogo(): JSX.Element {
     return (

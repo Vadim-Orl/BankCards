@@ -1,6 +1,6 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 import './App.scss';
-import { WelcomLogo } from '../shared';
+import { WelcomeLogo } from '../shared';
 const CardList = lazy(() => import('../widgets/CardList/ui/CardList/CardList'));
 
 export default function App(): JSX.Element {
@@ -16,9 +16,9 @@ export default function App(): JSX.Element {
     return (
         <div className="app">
             {loading ? (
-                <WelcomLogo />
+                <WelcomeLogo />
             ) : (
-                <Suspense fallback={<WelcomLogo />}>
+                <Suspense fallback={<WelcomeLogo />}>
                     <CardList />
                 </Suspense>
             )}

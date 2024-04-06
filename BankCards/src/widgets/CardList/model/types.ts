@@ -1,7 +1,7 @@
-import { CardItem } from '../../../entities/CardInfo/model/types';
+import { CardI } from '../../../entities';
 
 export interface Result {
-    companies: CardItem[];
+    companies: CardI[];
     limit: number;
     offset: number;
 }
