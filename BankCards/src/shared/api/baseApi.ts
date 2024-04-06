@@ -8,7 +8,7 @@ export const baseApi = createApi({
         prepareHeaders: (headers, { getState }) => {
             const token = (getState() as RootState).data.token;
             if (token) {
-                headers.set('Token', `${token}`);
+                headers.set('Token', token);
             }
 
             return headers;

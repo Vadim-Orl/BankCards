@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { CardItem } from '../../../entities/CardItem/model/types';
 import { widgetsCardListApi } from './widgetsCardListApi';
+import { CardI } from '../../../entities';
 
 type IInitialState = {
-    cards: CardItem[];
+    cards: CardI[];
     loadAllCards: boolean;
     token: string;
     nameToken: string;

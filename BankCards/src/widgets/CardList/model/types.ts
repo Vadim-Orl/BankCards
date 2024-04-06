@@ -1,4 +1,4 @@
-import { CardItem } from '../../../entities/CardItem/model/types';
+import { CardItem } from '../../../entities/CardInfo/model/types';
 
 export interface Result {
     companies: CardItem[];

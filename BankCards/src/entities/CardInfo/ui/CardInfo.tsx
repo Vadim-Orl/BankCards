@@ -1,32 +1,26 @@
-import CardNav from '../../../features/CardNav/ui/CardNav';
-import './CardItem.scss';
-import type { CardItem } from '../model/types';
+import './CardInfo.scss';
+import { CardI } from '../model/types';
 
 interface ICardItemProps {
-    card: CardItem;
+    card: CardI;
 }
 
-const CardItem = ({ card }: ICardItemProps) => {
+const CardInfo = ({ card }: ICardItemProps): JSX.Element => {
     const { mobileAppDashboard: cardDesign, customerMarkParameters: cardInfo } =
         card;
 
-    const { accentColor, mainColor, backgroundColor } = cardDesign;
-
     const highlightTextColor = {
         color: cardDesign.highlightTextColor,
-    };
-    const cardBackground = {
-        background: cardDesign.cardBackgroundColor,
     };
     const textColor = {
         color: cardDesign.textColor,
     };
 
     return (
-        <article className="card__item" style={cardBackground}>
+        <>
             <div className="card__title">
-                <p style={highlightTextColor}>{cardDesign.companyName}</p>
-                <img src={cardDesign.logo}></img>
+                <h2 style={highlightTextColor}>{cardDesign.companyName}</h2>
+                <img src={cardDesign.logo} />
             </div>
             <div className="card__info">
                 <p className="card__desc" style={textColor}>
@@ -34,7 +28,7 @@ const CardItem = ({ card }: ICardItemProps) => {
                         className="card__desc--ball"
                         style={highlightTextColor}
                     >
-                        {cardInfo.mark}{' '}
+                        {cardInfo.mark}
                     </span>
                     баллов
                 </p>
@@ -51,14 +45,8 @@ const CardItem = ({ card }: ICardItemProps) => {
                     </dl>
                 </div>
             </div>
-            <CardNav
-                accentColor={accentColor}
-                mainColor={mainColor}
-                backgroundColor={backgroundColor}
-                companyId={card.company.companyId}
-            />
-        </article>
+        </>
     );
 };
 
-export default CardItem;
+export default CardInfo;
