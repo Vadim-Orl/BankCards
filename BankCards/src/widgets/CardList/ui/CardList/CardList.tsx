@@ -1,12 +1,15 @@
-import { Error, LoadingCompany } from '../../../shared';
+import { Error, LoadingCompany } from '../../../../shared';
 import './CardList.scss';
-import { widgetsCardListApi } from '../api/widgetsCardListApi';
-import { useAppDispatch, useAppSelector } from '../../../app/hooks@deprecated';
-import { debounce } from '../../../shared/';
-import { incrementOffset } from '..';
+import { widgetsCardListApi } from '../../api/widgetsCardListApi';
+import {
+    useAppDispatch,
+    useAppSelector,
+} from '../../../../app/hooks@deprecated';
+import { debounce } from '../../../../shared';
+import { incrementOffset } from '../..';
 import { useEffect } from 'react';
-import { ErrorType } from '../../../shared/ui/Error';
-import CardItem from '../../../entities/CardItem/ui/CardItem';
+import { ErrorType } from '../../../../shared/ui/Error';
+import CardItem from '../CardItem/CardItem';
 
 const CardList = (): JSX.Element => {
     const dispatch = useAppDispatch();
@@ -45,7 +48,7 @@ const CardList = (): JSX.Element => {
 
     return (
         <section className="section__list">
-            <h2> Управление картами </h2>
+            <h2>Управление картами</h2>
 
             <ul className="list__card">
                 {cardList.map((el) => {

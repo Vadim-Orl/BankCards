@@ -1,4 +1,4 @@
-export interface CardItem {
+export interface CardI {
     company: Company;
     customerMarkParameters: CustomerMarkParameters;
     mobileAppDashboard: MobileAppDashboard;

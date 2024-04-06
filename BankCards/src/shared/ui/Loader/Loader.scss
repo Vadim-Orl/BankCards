@@ -9,10 +9,7 @@
     background: var(--black);
     background: linear-gradient(to right, var(--black) 10%, var(--black) 42%);
     position: relative;
-    -webkit-animation: load3 1.4s infinite linear;
     animation: load3 1.4s infinite linear;
-    -webkit-transform: translateZ(0);
-    -ms-transform: translateZ(0);
     transform: translateZ(0);
     margin-bottom: var(--margin2);
   }
@@ -39,23 +36,19 @@
     bottom: 0;
     right: 0;
   }
-  @-webkit-keyframes load3 {
+  @-webkit-keyframes load {
     0% {
-      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }
-  @keyframes load3 {
+  @keyframes load {
     0% {
-      -webkit-transform: rotate(0deg);
       transform: rotate(0deg);
     }
     100% {
-      -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
     }
   }

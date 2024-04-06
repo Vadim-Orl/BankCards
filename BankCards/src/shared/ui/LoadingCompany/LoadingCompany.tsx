@@ -1,7 +1,7 @@
 import { Loader } from '../Loader/Loader';
 import './LoadingCompany.scss';
 
-export function LoadingCompany() {
+export function LoadingCompany(): JSX.Element {
     return (
         <div className="loading">
             <Loader />

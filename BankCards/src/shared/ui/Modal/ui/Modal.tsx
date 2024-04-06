@@ -17,7 +17,7 @@ interface ModalProps {
 
 const modal = document.getElementById('modal') as HTMLElement;
 
-export function Modal({ message, cb, children }: ModalProps) {
+export function Modal({ message, cb, children }: ModalProps): JSX.Element {
     const dispatch = useAppDispatch();
     const isModalOpenStore = useAppSelector((store) => store.modal.isModalOpen);
 

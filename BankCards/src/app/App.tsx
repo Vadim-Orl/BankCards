@@ -1,10 +1,9 @@
 import { Suspense, lazy, useEffect, useState } from 'react';
 import './App.scss';
 import { WelcomLogo } from '../shared';
-// import CardList from '../widgets/CardList/ui/CardList';
-const CardList = lazy(() => import('../widgets/CardList/ui/CardList'));
+const CardList = lazy(() => import('../widgets/CardList/ui/CardList/CardList'));
 
-export default function App() {
+export default function App(): JSX.Element {
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {

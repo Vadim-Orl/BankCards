@@ -11,7 +11,6 @@ export const widgetsCardListApi = baseApi.injectEndpoints({
                     limit: limit,
                 },
                 method: 'POST',
-                // headers: { TOKEN: '123' },
             }),
             serializeQueryArgs: ({ endpointName }) => {
                 return endpointName;

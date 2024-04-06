@@ -13,7 +13,7 @@ type ButtonProps = {
     };
 };
 
-export function Button({ children, ...props }: ButtonProps) {
+export function Button({ children, ...props }: ButtonProps): JSX.Element {
     return (
         <button {...props} type="button">
             {children}

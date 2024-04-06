@@ -5,7 +5,7 @@ interface ErrorProps {
     error: ErrorType;
 }
 
-export function Error({ error }: ErrorProps) {
+export function Error({ error }: ErrorProps): JSX.Element {
     let message = '';
 
     switch (error.status) {
