@@ -5,7 +5,7 @@ interface DetailsBodyProps {
 export const DetailsBody = ({ companyId }: DetailsBodyProps): JSX.Element => {
     return (
         <div>
-            <p>Deteles</p>
+            <p>Details</p>
             <p>{companyId}</p>
         </div>
     );
