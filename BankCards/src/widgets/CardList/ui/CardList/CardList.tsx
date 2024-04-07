@@ -5,14 +5,15 @@ import {
     useAppDispatch,
     useAppSelector,
 } from '../../../../app/hooks@deprecated';
-import { debounce } from '../../../../shared';
 import { incrementOffset } from '../..';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { ErrorType } from '../../../../shared/ui/Error';
 import CardItem from '../CardItem/CardItem';
+import { useInView } from 'react-intersection-observer';
 
 const CardList = (): JSX.Element => {
     const dispatch = useAppDispatch();
+    const [loading, setLoading] = useState(false);
 
     const offset = useAppSelector((store) => store.data.offset);
     const limit = useAppSelector((store) => store.data.limit);
@@ -27,31 +28,35 @@ const CardList = (): JSX.Element => {
     const cardList = data?.companies ?? [];
     const errorCard = error as ErrorType;
 
+    const { ref, inView } = useInView({
+        threshold: 0.5,
+        triggerOnce: true,
+    });
+
     useEffect(() => {
-        const onScroll = () => {
-            const scrolledToBottom =
-                window.innerHeight + window.scrollY >=
-                document.body.offsetHeight - 10;
-
-            if (scrolledToBottom && !isFetching && !isLoadAllCard && !isError) {
-                dispatch(incrementOffset());
-            }
-        };
-
-        const debounceScroll = debounce(onScroll);
-        document.addEventListener('scroll', debounceScroll);
-
-        return function () {
-            document.removeEventListener('scroll', debounceScroll);
-        };
-    }, [offset, isFetching]);
+        if (inView && !loading && !isLoadAllCard) {
+            dispatch(incrementOffset());
+            setLoading(true);
+        } else {
+            setLoading(false);
+        }
+    }, [inView]);
 
     return (
         <section className="section__list">
             <h2>Управление картами</h2>
 
             <ul className="list__card">
-                {cardList.map((el) => {
+                {cardList.map((el, index) => {
+                    if (index + 1 === cardList.length) {
+                        return (
+                            <CardItem
+                                key={el.company.companyId}
+                                card={el}
+                                myref={ref}
+                            />
+                        );
+                    }
                     return <CardItem key={el.company.companyId} card={el} />;
                 })}
 

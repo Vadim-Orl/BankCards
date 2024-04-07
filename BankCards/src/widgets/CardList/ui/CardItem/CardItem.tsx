@@ -4,9 +4,10 @@ import { CardI } from '../../../../entities/CardInfo';
 
 interface ICardItemProps {
     card: CardI;
+    myref?: React.Ref<HTMLLIElement>;
 }
 
-const CardItem = ({ card }: ICardItemProps): JSX.Element => {
+const CardItem = ({ card, myref }: ICardItemProps) => {
     const { mobileAppDashboard: cardDesign } = card;
 
     const { accentColor, mainColor, backgroundColor } = cardDesign;
@@ -16,7 +17,7 @@ const CardItem = ({ card }: ICardItemProps): JSX.Element => {
     };
 
     return (
-        <article className="card__item" style={cardBackground}>
+        <li className="card__item" ref={myref} style={cardBackground}>
             <CardInfo card={card} />
             <CardNav
                 accentColor={accentColor}
@@ -24,7 +25,7 @@ const CardItem = ({ card }: ICardItemProps): JSX.Element => {
                 backgroundColor={backgroundColor}
                 companyId={card.company.companyId}
             />
-        </article>
+        </li>
     );
 };
 
