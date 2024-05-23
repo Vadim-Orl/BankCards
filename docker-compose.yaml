@@ -1,0 +1,10 @@
+version: '3'
+services:
+  gate:
+    container_name: gate
+    volumes:
+      - ./gate.conf:/etc/nginx/conf.d/default.conf
+      - ./BankCards:/var/www/
+    image: nginx:latest
+    ports:
+      - "8888:80"
